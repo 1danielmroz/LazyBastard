@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.startButton = new System.Windows.Forms.Button();
             this.targetFolderButton = new System.Windows.Forms.Button();
             this.destinationButton = new System.Windows.Forms.Button();
@@ -95,16 +95,16 @@
             this.fileChart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            chartArea1.Name = "ChartArea1";
-            this.fileChart.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.fileChart.Legends.Add(legend1);
+            chartArea3.Name = "ChartArea1";
+            this.fileChart.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.fileChart.Legends.Add(legend3);
             this.fileChart.Location = new System.Drawing.Point(197, 12);
             this.fileChart.Name = "fileChart";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.fileChart.Series.Add(series1);
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.fileChart.Series.Add(series3);
             this.fileChart.Size = new System.Drawing.Size(755, 444);
             this.fileChart.TabIndex = 4;
             this.fileChart.Text = "chart1";
@@ -171,7 +171,6 @@
             this.specGrup.Controls.Add(this.movedFilesLabel);
             this.specGrup.Controls.Add(this.startedTimeLabel);
             this.specGrup.Controls.Add(this.finishTimeLabel);
-            this.specGrup.Enabled = false;
             this.specGrup.Location = new System.Drawing.Point(12, 197);
             this.specGrup.Name = "specGrup";
             this.specGrup.Size = new System.Drawing.Size(166, 87);
@@ -222,12 +221,12 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart fileChart;
         private System.Windows.Forms.TextBox logBox;
         private System.Windows.Forms.Label startedTimeLabel;
-        private System.Windows.Forms.Label numberFilesMaped;
         private System.Windows.Forms.Label movedFilesLabel;
         private System.Windows.Forms.Label finishTimeLabel;
         private System.Windows.Forms.Label timeTakenLabel;
         private System.Windows.Forms.GroupBox specGrup;
         private System.Windows.Forms.CheckedListBox extensionCheckListBox;
+        public System.Windows.Forms.Label numberFilesMaped;
     }
 }
 

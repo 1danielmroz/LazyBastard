@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,10 @@ namespace LazyBastard
     public partial class lazyBastard : Form
     {
         private FolderBrowserDialog folderBrowser;
+        private List<string> directoryList;
+        private List<string> filespath;
+        private IDictionary<String, int> extensions;
+
         
         private String filenameTarget;
         private String filenameDestination;
@@ -21,6 +26,10 @@ namespace LazyBastard
         {
             InitializeComponent();
             this.folderBrowser = new FolderBrowserDialog();
+
+            directoryList = new List<string>();
+            filespath = new List<string>();
+            extensions = new Dictionary<String, int>();
         }
 
       
@@ -30,6 +39,9 @@ namespace LazyBastard
             filenameTarget = folderBrowser.SelectedPath;
             logBox.Text += "\n Target Directory Selected :" + filenameTarget;
             destinationButton.Enabled = true;
+            MapFiles(filenameTarget);
+            FillChart();
+            numberFilesMaped.Text = "Files Maped :" + filespath.Count.ToString();
         }
 
        
@@ -46,5 +58,60 @@ namespace LazyBastard
             logBox.Text += "\n Destination Directory Selected :" + filenameTarget;
             startButton.Enabled = true;
         }
+
+
+
+        private void MapFiles(string directorypath)
+        {
+           // logBox.Text += "\n starting maping";
+            string[] folder = Directory.GetDirectories(directorypath);
+            string[] files = Directory.GetFiles(directorypath);
+
+
+            if (folder.Length > 0)
+            {
+               foreach(string v in folder)
+                {
+                    directoryList.Add(v);
+                    MapFiles(v);
+                }
+            }
+            if (files.Length > 0)
+            {
+                foreach(string v in files)
+                {
+                    filespath.Add(v);
+                    string extension = Path.GetExtension(v);
+                    bool ex= extensions.ContainsKey(extension);
+                   
+                    if (ex)
+                    {
+                        extensions[extension] += 1;
+                    }
+                    else
+                    {
+                        extensions.Add(extension, 1);
+                     
+                    }
+
+                }
+            }
+        }
+
+        private void FillChart()
+        {
+            logBox.Text += "\n starting chart";
+            fileChart.Titles.Add("Extensions");
+
+            fileChart.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Funnel;
+            fileChart.Legends[0].Enabled = true;
+
+            foreach (KeyValuePair<string,int> v in extensions)
+            {
+            
+                fileChart.Series[0].Points.AddXY(v.Key, v.Value);
+            }
+        }
+
     }
 }
