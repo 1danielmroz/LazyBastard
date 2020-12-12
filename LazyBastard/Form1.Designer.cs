@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.startButton = new System.Windows.Forms.Button();
             this.targetFolderButton = new System.Windows.Forms.Button();
             this.destinationButton = new System.Windows.Forms.Button();
@@ -44,6 +44,7 @@
             this.timeTakenLabel = new System.Windows.Forms.Label();
             this.specGrup = new System.Windows.Forms.GroupBox();
             this.extensionCheckListBox = new System.Windows.Forms.CheckedListBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.fileChart)).BeginInit();
             this.specGrup.SuspendLayout();
             this.SuspendLayout();
@@ -95,17 +96,17 @@
             this.fileChart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            chartArea3.Name = "ChartArea1";
-            this.fileChart.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.fileChart.Legends.Add(legend3);
-            this.fileChart.Location = new System.Drawing.Point(197, 12);
+            chartArea1.Name = "ChartArea1";
+            this.fileChart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.fileChart.Legends.Add(legend1);
+            this.fileChart.Location = new System.Drawing.Point(197, 46);
             this.fileChart.Name = "fileChart";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.fileChart.Series.Add(series3);
-            this.fileChart.Size = new System.Drawing.Size(755, 444);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.fileChart.Series.Add(series1);
+            this.fileChart.Size = new System.Drawing.Size(755, 410);
             this.fileChart.TabIndex = 4;
             this.fileChart.Text = "chart1";
             // 
@@ -189,11 +190,23 @@
             this.extensionCheckListBox.Size = new System.Drawing.Size(166, 274);
             this.extensionCheckListBox.TabIndex = 12;
             // 
+            // button1
+            // 
+            this.button1.AccessibleName = "buttonDuplicatesFinder";
+            this.button1.Location = new System.Drawing.Point(806, 6);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(146, 34);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "Duplicates Finder";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // lazyBastard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(964, 579);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.extensionCheckListBox);
             this.Controls.Add(this.specGrup);
             this.Controls.Add(this.logBox);
@@ -227,6 +240,7 @@
         private System.Windows.Forms.GroupBox specGrup;
         private System.Windows.Forms.CheckedListBox extensionCheckListBox;
         public System.Windows.Forms.Label numberFilesMaped;
+        private System.Windows.Forms.Button button1;
     }
 }
 
