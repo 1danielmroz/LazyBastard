@@ -8,3 +8,13 @@ C:\Users\Daniel\source\repos\LazyBastard\LazyBastard\obj\Debug\LazyBastard.cspro
 C:\Users\Daniel\source\repos\LazyBastard\LazyBastard\obj\Debug\LazyBastard.csproj.CoreCompileInputs.cache
 C:\Users\Daniel\source\repos\LazyBastard\LazyBastard\obj\Debug\LazyBastard.exe
 C:\Users\Daniel\source\repos\LazyBastard\LazyBastard\obj\Debug\LazyBastard.pdb
+C:\Users\Daniel\source\repos\1danielmroz\LazyBastard\LazyBastard\bin\Debug\LazyBastard.exe.config
+C:\Users\Daniel\source\repos\1danielmroz\LazyBastard\LazyBastard\bin\Debug\LazyBastard.exe
+C:\Users\Daniel\source\repos\1danielmroz\LazyBastard\LazyBastard\bin\Debug\LazyBastard.pdb
+C:\Users\Daniel\source\repos\1danielmroz\LazyBastard\LazyBastard\obj\Debug\LazyBastard.csprojAssemblyReference.cache
+C:\Users\Daniel\source\repos\1danielmroz\LazyBastard\LazyBastard\obj\Debug\LazyBastard.lazyBastard.resources
+C:\Users\Daniel\source\repos\1danielmroz\LazyBastard\LazyBastard\obj\Debug\LazyBastard.Properties.Resources.resources
+C:\Users\Daniel\source\repos\1danielmroz\LazyBastard\LazyBastard\obj\Debug\LazyBastard.csproj.GenerateResource.cache
+C:\Users\Daniel\source\repos\1danielmroz\LazyBastard\LazyBastard\obj\Debug\LazyBastard.csproj.CoreCompileInputs.cache
+C:\Users\Daniel\source\repos\1danielmroz\LazyBastard\LazyBastard\obj\Debug\LazyBastard.exe
+C:\Users\Daniel\source\repos\1danielmroz\LazyBastard\LazyBastard\obj\Debug\LazyBastard.pdb

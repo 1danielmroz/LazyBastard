@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.902
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LazyBastard", "LazyBastard\LazyBastard.csproj", "{ED769714-CD1D-4733-934A-5BB6E36F5236}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_BASTARD", "WPF_BASTARD\WPF_BASTARD.csproj", "{97A98ED6-2162-43BF-BCE5-1882985D9276}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{ED769714-CD1D-4733-934A-5BB6E36F5236}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED769714-CD1D-4733-934A-5BB6E36F5236}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED769714-CD1D-4733-934A-5BB6E36F5236}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97A98ED6-2162-43BF-BCE5-1882985D9276}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97A98ED6-2162-43BF-BCE5-1882985D9276}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97A98ED6-2162-43BF-BCE5-1882985D9276}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97A98ED6-2162-43BF-BCE5-1882985D9276}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

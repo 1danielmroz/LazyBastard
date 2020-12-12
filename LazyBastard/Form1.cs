@@ -18,7 +18,7 @@ namespace LazyBastard
         private List<string> filespath;
         private IDictionary<String, int> extensions;
 
-        
+
         private String filenameTarget;
         private String filenameDestination;
 
@@ -32,7 +32,7 @@ namespace LazyBastard
             extensions = new Dictionary<String, int>();
         }
 
-      
+
         private void targetFolderButton_Click(object sender, EventArgs e)
         {
             folderBrowser.ShowDialog();
@@ -41,10 +41,11 @@ namespace LazyBastard
             destinationButton.Enabled = true;
             MapFiles(filenameTarget);
             FillChart();
+            fillChecklist();
             numberFilesMaped.Text = "Files Maped :" + filespath.Count.ToString();
         }
 
-       
+
 
         private void startButton_Click(object sender, EventArgs e)
         {
@@ -60,41 +61,57 @@ namespace LazyBastard
         }
 
 
+        public void fillChecklist()
+        {
+            //extensionCheckListBox.Items.AddRange(extensions.Keys.ToList());
+            extensionCheckListBox.Enabled = true;
+            foreach (KeyValuePair<string, int> v in extensions.OrderByDescending(x=>x.Value))
+            {
+                extensionCheckListBox.Items.Add($"{v.Key} ({v.Value})");
+            }
+        }
 
         private void MapFiles(string directorypath)
         {
-           // logBox.Text += "\n starting maping";
-            string[] folder = Directory.GetDirectories(directorypath);
-            string[] files = Directory.GetFiles(directorypath);
-
-
-            if (folder.Length > 0)
+            // logBox.Text += "\n starting maping";
+            try
             {
-               foreach(string v in folder)
+                string[] folder = Directory.GetDirectories(directorypath);
+                string[] files = Directory.GetFiles(directorypath);
+
+
+                if (folder.Length > 0)
                 {
-                    directoryList.Add(v);
-                    MapFiles(v);
+                    foreach (string v in folder)
+                    {
+                        directoryList.Add(v);
+                        MapFiles(v);
+                    }
+                }
+                if (files.Length > 0)
+                {
+                    foreach (string v in files)
+                    {
+                        filespath.Add(v);
+                        string extension = Path.GetExtension(v);
+                        bool ex = extensions.ContainsKey(extension);
+
+                        if (ex)
+                        {
+                            extensions[extension] += 1;
+                        }
+                        else
+                        {
+                            extensions.Add(extension, 1);
+
+                        }
+
+                    }
                 }
             }
-            if (files.Length > 0)
+            catch (Exception ex)
             {
-                foreach(string v in files)
-                {
-                    filespath.Add(v);
-                    string extension = Path.GetExtension(v);
-                    bool ex= extensions.ContainsKey(extension);
-                   
-                    if (ex)
-                    {
-                        extensions[extension] += 1;
-                    }
-                    else
-                    {
-                        extensions.Add(extension, 1);
-                     
-                    }
-
-                }
+                logBox.Text += "\n " + ex.Message;
             }
         }
 
@@ -106,9 +123,9 @@ namespace LazyBastard
             fileChart.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Funnel;
             fileChart.Legends[0].Enabled = true;
 
-            foreach (KeyValuePair<string,int> v in extensions)
+            foreach (KeyValuePair<string, int> v in extensions)
             {
-            
+
                 fileChart.Series[0].Points.AddXY(v.Key, v.Value);
             }
         }
